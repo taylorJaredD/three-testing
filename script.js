@@ -11,13 +11,25 @@ var renderer = new THREE.WebGLRenderer();
 
 var stoneTexture = new THREE.TextureLoader().load( 'stone.jpg');
 var geometry = new THREE.BoxBufferGeometry( 2, 1, 1 );
-var material = new THREE.MeshBasicMaterial( { map: stoneTexture } );
+var material = new THREE.MeshBasicMaterial( { color: 'grey' } );
 var cube = new THREE.Mesh( geometry, material );
 var cube2 = cube.clone()
 var cube3 = cube.clone()
+
+// Blocks = []
+// for (var i = 0; i <= 12; i++) {
+//   Blocks[i] = new THREE.Mesh( geometry, material)
+//   Blocks[i].position.x = ([i] * 2)
+//   Blocks[i].position.y = 1.5
+//   var pivot = new THREE.Object3D();
+//   pivot.add( Blocks[i]);
+//   // geometry.translate( -[i]/2, 0, 0 );
+//   // Blocks[i].rotateX(30)
+//   scene.add(pivot)
+// }
 	scene.add( cube, cube2, cube3 );
 
-	camera.position.z = 5;
+	camera.position.z = 10;
 
 // var animate = function () {
 //   // similar to setInterval but this pauses the animation when the browser is not active
